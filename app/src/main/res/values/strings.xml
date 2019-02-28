@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">BracketGenerator</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="name_form_hint">Enter a player\'s name</string>
+</resources>
