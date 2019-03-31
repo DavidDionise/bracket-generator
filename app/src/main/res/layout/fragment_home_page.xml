@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                  xmlns:tools="http://schemas.android.com/tools"
-                  android:layout_width="match_parent"
-                  android:layout_height="match_parent"
-                  tools:context=".HomePage" android:orientation="vertical" android:layout_centerHorizontal="false">
-        <Button
-                android:text="Start New Bracket"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:id="@+id/new_bracket_button"
-                style="@style/home_page_button"/>
-        <Button
-                android:text="Select Saved Bracket"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:id="@+id/select_bracket_button"
-                style="@style/home_page_button"/>
-    </LinearLayout>
-</layout>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".HomePage"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="false"
+        style="@style/padded_container">
+    <Button
+            android:text="Start New Bracket"
+            android:id="@+id/new_bracket_button"
+            style="@style/home_page_button"/>
+    <Button
+            android:text="Select Saved Bracket"
+            android:id="@+id/select_bracket_button"
+            style="@style/home_page_button"/>
+</LinearLayout>

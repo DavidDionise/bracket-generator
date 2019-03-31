@@ -1,16 +1,12 @@
 package com.bracketgenerator
 
-import android.content.Context
-import android.net.Uri
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
-import androidx.navigation.Navigation
+import android.widget.Button
+import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
-import com.bracketgenerator.databinding.FragmentHomePageBinding
 
 
 class HomePage : Fragment() {
@@ -18,16 +14,16 @@ class HomePage : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding: FragmentHomePageBinding = DataBindingUtil.inflate(
-            inflater, R.layout.fragment_home_page, container, false
-        )
 
-        binding.newBracketButton.setOnClickListener {
+        val view = inflater.inflate(
+            R.layout.fragment_home_page, container, false
+        )
+        val newBracketButton = view.findViewById<Button>(R.id.new_bracket_button)
+        newBracketButton?.setOnClickListener {
             it.findNavController().navigate(
                 R.id.action_homePage_to_bracketForm
             )
         }
-
-        return binding.root
+        return view
     }
 }

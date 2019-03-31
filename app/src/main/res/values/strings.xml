@@ -1,7 +1,10 @@
 <resources>
-    <string name="app_name">BracketGenerator</string>
+    <string name="app_name">Bracket Generator</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="name_form_hint">Enter a player\'s name</string>
+    <string name="bracket_form_user_label">Add Some Players</string>
+    <string name="bracket_form_user_hint">Player Name</string>
+    <string name="bracket_form_name_label">Enter the Bracket\'s Name</string>
+    <string name="bracket_form_name_hint">Bracket Name</string>
+    <string name="add_users_label">Add Users</string>
+    <string name="remove_user">-</string>
 </resources>
