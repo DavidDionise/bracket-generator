@@ -9,5 +9,9 @@
         <action android:id="@+id/action_homePage_to_bracketForm" app:destination="@id/bracketForm"/>
     </fragment>
     <fragment android:id="@+id/bracketForm" android:name="com.bracketgenerator.BracketForm"
-              android:label="fragment_bracket_form" tools:layout="@layout/fragment_bracket_form"/>
+              android:label="fragment_bracket_form" tools:layout="@layout/fragment_bracket_form">
+        <action android:id="@+id/action_bracketForm_to_bracketView" app:destination="@id/bracketView"/>
+    </fragment>
+    <fragment android:id="@+id/bracketView" android:name="com.bracketgenerator.BracketView"
+              android:label="fragment_bracket_view" tools:layout="@layout/fragment_bracket_view"/>
 </navigation>

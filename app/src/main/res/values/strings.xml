@@ -7,4 +7,5 @@
     <string name="bracket_form_name_hint">Bracket Name</string>
     <string name="add_users_label">Add Users</string>
     <string name="remove_user">-</string>
+    <string name="save_bracket_label">Save</string>
 </resources>
