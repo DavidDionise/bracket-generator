@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 class NameInputListAdapter(private val data: MutableList<String>) :
     RecyclerView.Adapter<NameInputListAdapter.InputListViewHolder>() {
 
-    class InputListViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
+    class InputListViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val inputField: EditText = view.findViewById(R.id.bracket_form_input_field)
         val removePlayerButton: Button = view.findViewById(R.id.remove_player_button)
     }
