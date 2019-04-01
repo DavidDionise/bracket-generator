@@ -1,56 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:id="@+id/bracket_form_container"
-        android:orientation="vertical"
-        style="@style/padded_container">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable name="bracket" type="com.bracketgenerator.BracketData"/>
+    </data>
     <LinearLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
+
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:orientation="vertical" android:id="@+id/bracket_form_name_container"
-            style="@style/bracket_form_group_container">
-        <TextView
-                android:text="@string/bracket_form_name_label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/name_input_heading"
-                style="@style/bracket_form_heading"
-        />
-        <EditText
-                android:orientation="vertical"
-                android:inputType="text" android:importantForAutofill="no"
-                android:hint="@string/bracket_form_name_hint"
-                android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:id="@+id/bracket_form_input_field"
-                style="@style/bracket_form_input_field"/>
-    </LinearLayout>
-
-    <LinearLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
+            android:id="@+id/bracket_form_container"
             android:orientation="vertical"
-            android:id="@+id/bracket_form_users_container"
-            style="@style/bracket_form_group_container">
-        <TextView
-                android:text="@string/bracket_form_user_label"
-                android:layout_width="wrap_content"
+            style="@style/padded_container">
+        <LinearLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_height="wrap_content"
-                android:id="@+id/user_input_heading"
-                style="@style/bracket_form_heading"
-        />
-
-        <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/bracket_form_names_input_list"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:orientation="vertical" android:id="@+id/bracket_form_name_container"
+                style="@style/bracket_form_group_container">
+            <TextView
+                    android:text="@string/bracket_form_name_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/name_input_heading"
+                    style="@style/bracket_form_heading"
+            />
+            <EditText
+                    android:orientation="vertical"
+                    android:inputType="text" android:importantForAutofill="no"
+                    android:hint="@string/bracket_form_name_hint"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:id="@+id/bracket_form_input_field"
+                    android:text="@{bracket.bracketName}"
+                    style="@style/bracket_form_input_field"/>
+        </LinearLayout>
+
+        <TextView
+                android:text="@{bracket.bracketName}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView"/>
+        <LinearLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:id="@+id/bracket_form_users_container"
+                style="@style/bracket_form_group_container">
+            <TextView
+                    android:text="@string/bracket_form_user_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/user_input_heading"
+                    style="@style/bracket_form_heading"
+            />
+
+            <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/bracket_form_names_input_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+        </LinearLayout>
+        <Button
+                android:text="Add Player"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/add_player_button"/>
     </LinearLayout>
-    <Button
-            android:text="Add Player"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/add_player_button"/>
-</LinearLayout>
+</layout>
