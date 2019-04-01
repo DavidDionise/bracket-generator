@@ -10,7 +10,7 @@ import android.widget.EditText
 import androidx.recyclerview.widget.RecyclerView
 
 
-class NameInputListAdapter(private val model: BracketViewModel) :
+class NameInputListAdapter(private val users: MutableList<String>) :
     RecyclerView.Adapter<NameInputListAdapter.InputListViewHolder>() {
 
     class InputListViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -27,7 +27,7 @@ class NameInputListAdapter(private val model: BracketViewModel) :
     }
 
     override fun getItemCount(): Int {
-        return model.users.size
+        return users.size
     }
 
     override fun onBindViewHolder(holder: InputListViewHolder, position: Int) {
@@ -35,8 +35,8 @@ class NameInputListAdapter(private val model: BracketViewModel) :
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                if (model.users.getOrNull(holder.adapterPosition) != null) {
-                    model.users[holder.adapterPosition] = s.toString()
+                if (users.getOrNull(holder.adapterPosition) != null) {
+                    users[holder.adapterPosition] = s.toString()
                 }
             }
 
@@ -45,12 +45,10 @@ class NameInputListAdapter(private val model: BracketViewModel) :
 
         holder.removePlayerButton.setOnClickListener {
             holder.inputField.setText("")
-            if (model.users.getOrNull(holder.adapterPosition) != null) {
-                model.users.removeAt(holder.adapterPosition)
+            if (users.getOrNull(holder.adapterPosition) != null) {
+                users.removeAt(holder.adapterPosition)
                 this.notifyItemRemoved(holder.adapterPosition)
             }
         }
     }
-
-
 }

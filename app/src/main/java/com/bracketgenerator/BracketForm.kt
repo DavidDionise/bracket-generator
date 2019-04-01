@@ -69,7 +69,7 @@ class BracketForm : Fragment() {
 
     private fun generateRecyclerView() {
         viewManager = LinearLayoutManager(this.context)
-        viewAdapter = NameInputListAdapter(model)
+        viewAdapter = NameInputListAdapter(model.users)
         recyclerView = view!!.findViewById<RecyclerView>(R.id.bracket_form_names_input_list).apply {
             setHasFixedSize(false)
             layoutManager = viewManager
